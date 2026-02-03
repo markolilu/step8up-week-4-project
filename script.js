@@ -1,4 +1,4 @@
-var taskListEl = document.getElementById("task-list");
+var taskListEls = document.getElementById("task-list");
 
 const form = document.getElementById("input-form");
 
@@ -25,20 +25,31 @@ form.addEventListener("submit", e => {
 
 function newTaskBuilder(values) {
 
-    var taskListEls = document.getElementById("task-list");
 
     var newTaskEl = document.createElement("div");
+    newTaskEl.className = "task";
     taskListEls.appendChild(newTaskEl);
 
     var taskContent = `
         <div class="task">
             <h3>TASK NAME = ${values.taskname}</h3>
             <p>Priority = ${values.prio_level}</p>
-            <p>DeadLine = ${values.deadline}</p>
-            <button type="submit" class="delete-task">Complete Task</button>
+            <p>Dead Line = ${values.deadline}</p>
+            <button type="button" class="delete-task">Complete Task</button>
         </div>
     `;
 
     newTaskEl.innerHTML = taskContent;
-
 }
+
+
+let buttons = document.querySelectorAll(".delete-task");
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        button.closest(".task").remove();
+    })
+})
+
+
+
