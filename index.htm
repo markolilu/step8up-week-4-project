@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="input-form">
+        <label>Task Name:</label>
+        <input type="text" id="taskname" name="taskname">
+        <br>
+        <p>Priority:</p>
+        <input type="radio" id="priohigh" name="prio_level" value="High">
+        <label>High</label><br>
+        <input type="radio" id="priomid" name="prio_level" value="Mid">
+        <label>Medium</label><br>
+        <input type="radio" id="priolow" name="prio_level" value="Low">
+        <label>Low</label>
+        <br>
+        <br>
+        <label>Deadline:</label>
+        <input type="date" id="deadline" name="deadline">
+        <br>
+        <br>
+        <button type="submit" id="submit-task">Add Task</button>
+
+    </form>
+
+    <h2>TASK LIST:</h2>
+
+    <div id="task-list">
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
