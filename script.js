@@ -46,6 +46,12 @@ function newTaskBuilder(values) {
 
 
 
+taskListEls.addEventListener("click", function (e) {
+    if (e.target.classList.contains("delete-task")) {
+        const taskEl = e.target.closest(".task");
+        taskEl.remove();
+    }
+});
 
 
 
